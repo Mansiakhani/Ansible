@@ -1,0 +1,24 @@
+
+---
+- name: Second PB- Install and start service
+  hosts: localhost
+  become: true
+  become_user: root
+  tasks:
+  - name: Install nginx
+    command: amazon-linux-extras install nginx1.12=latest -y
+
+  - name: start nginx
+    service:
+      name: nginx
+      state: started
+      enabled: true
+
+  - name: Get nginx installed version
+    command: nginx -v
+
+  - name: get status of nginx service
+    command: systemctl status nginx
+
+
+    
