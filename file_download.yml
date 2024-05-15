@@ -1,0 +1,13 @@
+---
+- name: User Managment
+  hosts: all
+  become: true
+  become_user: root
+
+  tasks: 
+  - name: Download for linux
+    get_url: 
+      url: https://www.python.org/ftp/python/3.12.3/Python-3.12.3.tgz
+      dest: /root
+      owner: ec2-user
+      mode: 0777
