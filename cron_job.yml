@@ -1,0 +1,15 @@
+---
+- name: Cron job execution
+  hosts: all
+  tasks:
+  - name: Add a Cron job
+    cron:
+      name: Run Script1
+      minute: 30
+      hour: 5
+      day: 10
+      month: "*"
+      day: "*"
+      user: ec2-user
+      job: /home/ec2-user/script1.sh
+

@@ -1,0 +1,9 @@
+---
+- name: Cron job execution
+  hosts: all
+  tasks:
+  - name: Remove cron job
+    cron:
+      name: Run Script1
+      state: absent
+      user: ec2-user
