@@ -1,0 +1,10 @@
+---
+-name: Copy file from one ec2-instance to another-instance
+ hosts: all
+
+ tasks:
+ - name: copying specific filke from local server to remote server
+  copy:
+    src: /home/ec2-user/playbook/second_pb.yml
+    dest: /home/ec2-user
+    mode: '0644'
